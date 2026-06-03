@@ -2,418 +2,238 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Rutul Muzic</title>
-   <link rel="icon" href="music.ico" type="image/x-icon">
+  <link rel="icon" href="music.ico" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="min-h-screen bg-slate-950 text-slate-100">
+<body class="min-h-screen bg-[#0f0f0f] text-white antialiased">
+  <main class="mx-auto min-h-screen w-full max-w-md px-4 pb-6 pt-5">
 
-  <!-- Фон -->
-  <div class="fixed inset-0 -z-10">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950"></div>
-    <div class="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
-  </div>
-
-  <main class="mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-10">
-
-    <!-- ===================== СТРАНИЦА ПЛЕЙЛИСТОВ ===================== -->
+    <!-- СТРАНИЦА ПЛЕЙЛИСТОВ -->
     <section id="playlistsPage">
-
-      <!-- Заголовок -->
-      <div class="mb-6 sm:mb-8">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
-          Music Library
+      <header class="mb-5">
+        <p class="mb-1 text-xs font-bold uppercase tracking-[0.18em] text-yellow-400">
+          Rutul Muzic
         </p>
 
-        <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 class="text-2xl font-extrabold leading-tight">
           Рутульские песни
         </h1>
 
-        <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
-          Выберите исполнителя, чтобы открыть список треков.
+        <p class="mt-2 text-sm leading-5 text-zinc-400">
+          Выберите исполнителя и слушайте плейлист.
         </p>
-      </div>
+      </header>
 
+      <div class="space-y-2">
 
-      <!-- Список плейлистов -->
-      <div class="space-y-3">
-
-        <!-- Плейлист 1 -->
-        <button
-          onclick="openPlaylist('playlist1')"
-          class="group w-full rounded-2xl border border-white/10 bg-white/10 p-4 text-left shadow-lg backdrop-blur-xl transition duration-300 hover:border-blue-400/60 hover:bg-white/15"
-        >
-          <div class="flex items-center gap-4">
-
-            <!-- Маленький значок -->
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-500/20 text-2xl text-blue-200 ring-1 ring-blue-400/30">
-              🎧
-            </div>
-
-            <!-- Информация -->
-            <div class="min-w-0 flex-1">
-              <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="truncate text-lg font-bold text-white group-hover:text-blue-300">
-                  Вели Шахбанов
-                </h2>
-
-                <span class="w-fit rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-200">
-                  12 треков
-                </span>
-              </div>
-            </div>
-
-            <!-- Стрелка -->
-            <div class="hidden text-xl text-slate-500 transition group-hover:translate-x-1 group-hover:text-blue-300 sm:block">
-              →
-            </div>
-
-          </div>
+        <button onclick="openPlaylist('playlist1')" class="playlist-btn">
+          <span class="playlist-cover">♪</span>
+          <span class="min-w-0 flex-1">
+            <span class="block truncate text-base font-bold">Вели Шахбанов</span>
+            <span class="block text-sm text-zinc-400">12 треков</span>
+          </span>
+          <span class="text-zinc-500">›</span>
         </button>
 
-
-        <!-- Плейлист 2 -->
-        <button
-          onclick="openPlaylist('playlist2')"
-          class="group w-full rounded-2xl border border-white/10 bg-white/10 p-4 text-left shadow-lg backdrop-blur-xl transition duration-300 hover:border-purple-400/60 hover:bg-white/15"
-        >
-          <div class="flex items-center gap-4">
-
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-500/20 text-2xl text-purple-200 ring-1 ring-purple-400/30">
-              🔥
-            </div>
-
-            <div class="min-w-0 flex-1">
-              <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="truncate text-lg font-bold text-white group-hover:text-purple-300">
-                  Шафи Ибрагимов
-                </h2>
-
-                <span class="w-fit rounded-full bg-purple-500/20 px-3 py-1 text-xs font-semibold text-purple-200">
-                  20 треков
-                </span>
-              </div>
-            </div>
-
-            <div class="hidden text-xl text-slate-500 transition group-hover:translate-x-1 group-hover:text-purple-300 sm:block">
-              →
-            </div>
-
-          </div>
+        <button onclick="openPlaylist('playlist2')" class="playlist-btn">
+          <span class="playlist-cover">♪</span>
+          <span class="min-w-0 flex-1">
+            <span class="block truncate text-base font-bold">Шафи Ибрагимов</span>
+            <span class="block text-sm text-zinc-400">20 треков</span>
+          </span>
+          <span class="text-zinc-500">›</span>
         </button>
 
-
-        <!-- Плейлист 3 -->
-        <button
-          onclick="openPlaylist('playlist3')"
-          class="group w-full rounded-2xl border border-white/10 bg-white/10 p-4 text-left shadow-lg backdrop-blur-xl transition duration-300 hover:border-emerald-400/60 hover:bg-white/15"
-        >
-          <div class="flex items-center gap-4">
-
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-2xl text-emerald-200 ring-1 ring-emerald-400/30">
-              🌿
-            </div>
-
-            <div class="min-w-0 flex-1">
-              <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="truncate text-lg font-bold text-white group-hover:text-emerald-300">
-                  Мевлидин (Потий), Ханзда, Зарема Довудова
-                </h2>
-
-                <span class="w-fit rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-200">
-                  8 треков
-                </span>
-              </div>
-            </div>
-
-            <div class="hidden text-xl text-slate-500 transition group-hover:translate-x-1 group-hover:text-emerald-300 sm:block">
-              →
-            </div>
-
-          </div>
+        <button onclick="openPlaylist('playlist3')" class="playlist-btn">
+          <span class="playlist-cover">♪</span>
+          <span class="min-w-0 flex-1">
+            <span class="block truncate text-base font-bold">Мевлидин, Ханзда, Зарема Довудова</span>
+            <span class="block text-sm text-zinc-400">8 треков</span>
+          </span>
+          <span class="text-zinc-500">›</span>
         </button>
 
-
-        <!-- Плейлист 4 -->
-        <button
-        onclick="openPlaylist('playlist4')"
-        class="group w-full rounded-2xl border border-white/10 bg-white/10 p-4 text-left shadow-lg backdrop-blur-xl transition duration-300 hover:border-rose-400/60 hover:bg-white/15"
-        >
-        <div class="flex items-center gap-4">
-
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-rose-500/20 text-2xl text-rose-200 ring-1 ring-rose-400/30">
-            ❤️
-            </div>
-
-            <div class="min-w-0 flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="truncate text-lg font-bold text-white group-hover:text-rose-300">
-                Кристина (Шахри) Азизханова
-                </h2>
-
-                <span class="w-fit rounded-full bg-rose-500/20 px-3 py-1 text-xs font-semibold text-rose-200">
-                15 треков
-                </span>
-            </div>
-            </div>
-
-            <div class="hidden text-xl text-slate-500 transition group-hover:translate-x-1 group-hover:text-rose-300 sm:block">
-            →
-            </div>
-
-        </div>
+        <button onclick="openPlaylist('playlist4')" class="playlist-btn">
+          <span class="playlist-cover">♪</span>
+          <span class="min-w-0 flex-1">
+            <span class="block truncate text-base font-bold">Кристина Азизханова</span>
+            <span class="block text-sm text-zinc-400">15 треков</span>
+          </span>
+          <span class="text-zinc-500">›</span>
         </button>
 
-
-        <!-- Плейлист 5 -->
-        <button
-        onclick="openPlaylist('playlist5')"
-        class="group w-full rounded-2xl border border-white/10 bg-white/10 p-4 text-left shadow-lg backdrop-blur-xl transition duration-300 hover:border-orange-400/60 hover:bg-white/15"
-        >
-        <div class="flex items-center gap-4">
-
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-500/20 text-2xl text-orange-200 ring-1 ring-orange-400/30">
-            ⚡
-            </div>
-
-            <div class="min-w-0 flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="truncate text-lg font-bold text-white group-hover:text-orange-300">
-                Лезгинка и другие рутульские зажигательные
-                </h2>
-
-                <span class="w-fit rounded-full bg-orange-500/20 px-3 py-1 text-xs font-semibold text-orange-200">
-                18 треков
-                </span>
-            </div>
-            </div>
-
-            <div class="hidden text-xl text-slate-500 transition group-hover:translate-x-1 group-hover:text-orange-300 sm:block">
-            →
-            </div>
-
-        </div>
+        <button onclick="openPlaylist('playlist5')" class="playlist-btn">
+          <span class="playlist-cover">♪</span>
+          <span class="min-w-0 flex-1">
+            <span class="block truncate text-base font-bold">Лезгинка и зажигательные</span>
+            <span class="block text-sm text-zinc-400">18 треков</span>
+          </span>
+          <span class="text-zinc-500">›</span>
         </button>
 
-
-        <!-- Плейлист 6 -->
-        <button
-        onclick="openPlaylist('playlist6')"
-        class="group w-full rounded-2xl border border-white/10 bg-white/10 p-4 text-left shadow-lg backdrop-blur-xl transition duration-300 hover:border-cyan-400/60 hover:bg-white/15"
-        >
-        <div class="flex items-center gap-4">
-
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-500/20 text-2xl text-cyan-200 ring-1 ring-cyan-400/30">
-            🌊
-            </div>
-
-            <div class="min-w-0 flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="truncate text-lg font-bold text-white group-hover:text-cyan-300">
-                Эсмира (Гр. Кизляр)
-                </h2>
-
-                <span class="w-fit rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-semibold text-cyan-200">
-                10 треков
-                </span>
-            </div>
-            </div>
-
-            <div class="hidden text-xl text-slate-500 transition group-hover:translate-x-1 group-hover:text-cyan-300 sm:block">
-            →
-            </div>
-
-        </div>
+        <button onclick="openPlaylist('playlist6')" class="playlist-btn">
+          <span class="playlist-cover">♪</span>
+          <span class="min-w-0 flex-1">
+            <span class="block truncate text-base font-bold">Эсмира</span>
+            <span class="block text-sm text-zinc-400">10 треков</span>
+          </span>
+          <span class="text-zinc-500">›</span>
         </button>
 
-
-        <!-- Плейлист 7 -->
-        <button
-        onclick="openPlaylist('playlist7')"
-        class="group w-full rounded-2xl border border-white/10 bg-white/10 p-4 text-left shadow-lg backdrop-blur-xl transition duration-300 hover:border-indigo-400/60 hover:bg-white/15"
-        >
-        <div class="flex items-center gap-4">
-
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-500/20 text-2xl text-indigo-200 ring-1 ring-indigo-400/30">
-            🌙
-            </div>
-
-            <div class="min-w-0 flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="truncate text-lg font-bold text-white group-hover:text-indigo-300">
-                Гюльназ Гаджикурбанова
-                </h2>
-
-                <span class="w-fit rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-semibold text-indigo-200">
-                22 трека
-                </span>
-            </div>
-            </div>
-
-            <div class="hidden text-xl text-slate-500 transition group-hover:translate-x-1 group-hover:text-indigo-300 sm:block">
-            →
-            </div>
-
-        </div>
+        <button onclick="openPlaylist('playlist7')" class="playlist-btn">
+          <span class="playlist-cover">♪</span>
+          <span class="min-w-0 flex-1">
+            <span class="block truncate text-base font-bold">Гюльназ Гаджикурбанова</span>
+            <span class="block text-sm text-zinc-400">22 трека</span>
+          </span>
+          <span class="text-zinc-500">›</span>
         </button>
 
-
-        <!-- Плейлист 8 -->
-        <button
-        onclick="openPlaylist('playlist8')"
-        class="group w-full rounded-2xl border border-white/10 bg-white/10 p-4 text-left shadow-lg backdrop-blur-xl transition duration-300 hover:border-yellow-400/60 hover:bg-white/15"
-        >
-        <div class="flex items-center gap-4">
-
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-yellow-500/20 text-2xl text-yellow-200 ring-1 ring-yellow-400/30">
-            ☀️
-            </div>
-
-            <div class="min-w-0 flex-1">
-            <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="truncate text-lg font-bold text-white group-hover:text-yellow-300">
-                Бахтавар
-                </h2>
-
-                <span class="w-fit rounded-full bg-yellow-500/20 px-3 py-1 text-xs font-semibold text-yellow-200">
-                25 треков
-                </span>
-            </div>
-            </div>
-
-            <div class="hidden text-xl text-slate-500 transition group-hover:translate-x-1 group-hover:text-yellow-300 sm:block">
-            →
-            </div>
-
-        </div>
+        <button onclick="openPlaylist('playlist8')" class="playlist-btn">
+          <span class="playlist-cover">♪</span>
+          <span class="min-w-0 flex-1">
+            <span class="block truncate text-base font-bold">Бахтавар</span>
+            <span class="block text-sm text-zinc-400">25 треков</span>
+          </span>
+          <span class="text-zinc-500">›</span>
         </button>
 
       </div>
     </section>
 
 
-    <!-- ===================== СТРАНИЦА С ТРЕКАМИ ===================== -->
+    <!-- СТРАНИЦА ПЛЕЙЛИСТА -->
     <section id="tracksPage" class="hidden">
-
-      <!-- Кнопка назад -->
-      <button
-        onclick="goBack()"
-        class="mb-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-slate-200 backdrop-blur-xl transition hover:border-blue-400/60 hover:bg-blue-500/20 hover:text-white sm:w-auto"
-      >
-        <span class="text-lg">←</span>
-        Назад к плейлистам
+      <button onclick="goBack()" aria-label="Назад" class="mb-2 inline-flex h-9 w-full items-center justify-center rounded-full bg-yellow-400 text-xl text-black active:scale-[0.98]">
+       Назад
       </button>
 
+      <div id="playlistTitle" class="mb-3">
 
-      <!-- ===================== ТРЕКИ ПЛЕЙЛИСТА 1 ===================== -->
       <div id="playlist1" class="playlist-content hidden">
-        <div class="mb-5 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4 shadow-lg backdrop-blur-xl">
-          <div class="flex items-center gap-4">
-            <iframe class="rounded-lg" frameborder="0" allow="clipboard-write" style="border:none;width: 820px;;height:600px;" width="820px" height="556" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
-          </div>
-        </div>
+        <iframe class="ym-frame" frameborder="0" allow="clipboard-write" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
       </div>
-
 
       <div id="playlist2" class="playlist-content hidden">
-        <div class="mb-5 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4 shadow-lg backdrop-blur-xl">
-          <div class="flex items-center gap-4">
-            <iframe class="rounded-lg" frameborder="0" allow="clipboard-write" style="border:none;width: 820px;;height:600px;" width="820px" height="556" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
-          </div>
-        </div>
+        <iframe class="ym-frame" frameborder="0" allow="clipboard-write" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Шафи Ибрагимов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
       </div>
-      
+
       <div id="playlist3" class="playlist-content hidden">
-        <div class="mb-5 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4 shadow-lg backdrop-blur-xl">
-          <div class="flex items-center gap-4">
-            <iframe class="rounded-lg" frameborder="0" allow="clipboard-write" style="border:none;width: 820px;;height:600px;" width="820px" height="556" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
-          </div>
-        </div>
+        <iframe class="ym-frame" frameborder="0" allow="clipboard-write" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Мевлидин, Ханзда, Зарема Довудова</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
       </div>
 
       <div id="playlist4" class="playlist-content hidden">
-        <div class="mb-5 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4 shadow-lg backdrop-blur-xl">
-          <div class="flex items-center gap-4">
-            <iframe class="rounded-lg" frameborder="0" allow="clipboard-write" style="border:none;width: 820px;;height:600px;" width="820px" height="556" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
-          </div>
-        </div>
+        <iframe class="ym-frame" frameborder="0" allow="clipboard-write" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Кристина Азизханова</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
       </div>
 
       <div id="playlist5" class="playlist-content hidden">
-        <div class="mb-5 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4 shadow-lg backdrop-blur-xl">
-          <div class="flex items-center gap-4">
-            <iframe class="rounded-lg" frameborder="0" allow="clipboard-write" style="border:none;width: 820px;;height:600px;" width="820px" height="556" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
-          </div>
-        </div>
+        <iframe class="ym-frame" frameborder="0" allow="clipboard-write" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Лезгинка и рутульские зажигательные</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
       </div>
 
       <div id="playlist6" class="playlist-content hidden">
-        <div class="mb-5 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4 shadow-lg backdrop-blur-xl">
-          <div class="flex items-center gap-4">
-            <iframe class="rounded-lg" frameborder="0" allow="clipboard-write" style="border:none;width: 820px;;height:600px;" width="820px" height="556" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
-          </div>
-        </div>
+        <iframe class="ym-frame" frameborder="0" allow="clipboard-write" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Эсмира</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
       </div>
 
       <div id="playlist7" class="playlist-content hidden">
-        <div class="mb-5 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4 shadow-lg backdrop-blur-xl">
-          <div class="flex items-center gap-4">
-            <iframe class="rounded-lg" frameborder="0" allow="clipboard-write" style="border:none;width: 820px;;height:600px;" width="820px" height="556" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
-          </div>
-        </div>
+        <iframe class="ym-frame" frameborder="0" allow="clipboard-write" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Гюльназ Гаджикурбанова</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
       </div>
 
       <div id="playlist8" class="playlist-content hidden">
-        <div class="mb-5 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4 shadow-lg backdrop-blur-xl">
-          <div class="flex items-center gap-4">
-            <iframe class="rounded-lg" frameborder="0" allow="clipboard-write" style="border:none;width: 820px;;height:600px;" width="820px" height="556" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Вели Шахбанов</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
-          </div>
-        </div>
+        <iframe class="ym-frame" frameborder="0" allow="clipboard-write" src="https://music.yandex.ru/iframe/playlist/ziyaudinkasumov/1000">Слушайте <a href="https://music.yandex.ru/playlists/3d79f9cd-d1bf-232a-a984-7ab2fcdbc084?utm_source=web&utm_medium=copy_link">Бахтавар</a> — <a href="https://music.yandex.ru/users/ziyaudinkasumov">Зияудин Касумов</a> на Яндекс Музыке</iframe>
       </div>
-
     </section>
-
   </main>
 
+  <style>
+    .playlist-btn {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 12px;
+      border-radius: 16px;
+      background: #181818;
+      padding: 12px;
+      text-align: left;
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .playlist-btn:active {
+      transform: scale(.985);
+      background: #222;
+    }
+
+    .playlist-cover {
+      display: flex;
+      height: 48px;
+      width: 48px;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #facc15, #f59e0b);
+      color: #111;
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .ym-frame {
+      display: block;
+      width: 100%;
+      height: calc(100dvh - 140px);
+      min-height: 520px;
+      border: none;
+      border-radius: 16px;
+      background: #181818;
+    }
+
+    @media (max-width: 360px) {
+      .ym-frame {
+        min-height: 480px;
+      }
+    }
+  </style>
 
   <script>
     const playlistsPage = document.getElementById('playlistsPage');
     const tracksPage = document.getElementById('tracksPage');
     const playlistContents = document.querySelectorAll('.playlist-content');
+    const playlistName = document.getElementById('playlistName');
+
+    const names = {
+      playlist1: 'Вели Шахбанов',
+      playlist2: 'Шафи Ибрагимов',
+      playlist3: 'Мевлидин, Ханзда, Зарема Довудова',
+      playlist4: 'Кристина Азизханова',
+      playlist5: 'Лезгинка и рутульские зажигательные',
+      playlist6: 'Эсмира',
+      playlist7: 'Гюльназ Гаджикурбанова',
+      playlist8: 'Бахтавар'
+    };
 
     function openPlaylist(playlistId) {
       playlistsPage.classList.add('hidden');
       tracksPage.classList.remove('hidden');
 
-      playlistContents.forEach(content => {
-        content.classList.add('hidden');
-      });
+      playlistContents.forEach(content => content.classList.add('hidden'));
 
       document.getElementById(playlistId).classList.remove('hidden');
+      playlistName.textContent = names[playlistId] || 'Плейлист';
 
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function goBack() {
       tracksPage.classList.add('hidden');
       playlistsPage.classList.remove('hidden');
 
-      playlistContents.forEach(content => {
-        content.classList.add('hidden');
-      });
+      playlistContents.forEach(content => content.classList.add('hidden'));
 
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
-
 </body>
 </html>
